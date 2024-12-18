@@ -1,4 +1,4 @@
-MRI global model recon
+LONDN-MRI
 =====================================
 
 Code for testing and reproducing results for MRI local study project:
