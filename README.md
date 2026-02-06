@@ -133,5 +133,5 @@ If you find this code useful, please cite our paper:
 For questions regarding the paper or code, please contact:
 
 * **Shijun Liang**: `liangs16@msu.edu`
-* **Haijie Yuan**: `hy2786@nyu.edu`
+* **Haijie Yuan**: `yuanhai1@msu.edu`
 * **Prof. Saiprasad Ravishankar**: `ravisha3@msu.edu`
