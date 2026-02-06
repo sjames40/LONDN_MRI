@@ -42,14 +42,36 @@ The core implementation is located under the `multi_coil_LONDN/` directory.
 * **[BART](https://mrirecon.github.io/bart/)**: Used for generating the initial dataset.
 
 ### 2. Data Preparation
+To reproduce the results, please download the specific k-space datasets used in our experiments.
 
-    We **recommend** downloading the **fastMRI dataset** first, as it is the primary dataset used to generate the results in `self_guided_DIP_demo.ipynb`. 
+1.  **Dataset**:  
+    - [**fastMRI Dataset website**](https://fastmri.med.nyu.edu/) (Download will take some time)
+    - [**Stanford 2D FSE website**](http://mridata.org/list?project=Stanford%202D%20FSE) (or download our copy via [**Google Drive**](https://drive.google.com/drive/folders/1CEI3SH2Amw1wRlQJygeWj1r1TI4jAOjm?usp=sharing))
+
+3.  **Setup**:  
+    We **recommend** downloading the **fastMRI dataset** first, as it is the primary dataset used to generate the results in `our_notebook.ipynb`. 
     
     **Download Instructions:**
     * **For fastMRI**: Please visit the official website to obtain the license/agreement and then download the data.
     * **For Stanford 2D FSE**: The **full dataset** is available on the official website. We also provide a **partial dataset** (subset) via [**Google Drive**](https://drive.google.com/drive/folders/1CEI3SH2Amw1wRlQJygeWj1r1TI4jAOjm?usp=sharing) for quick testing.
     
-    Once downloaded, unzip the files and place them into the project directory (e.g., inside a folder named `data` or as specified in the notebook).
+Once downloaded, unzip the files and place them into the project directory (e.g., inside a folder named `data` or as specified in the notebook).
+    **Step 1: Configure Path**
+Unzip the downloaded data to your local storage (e.g., `/mnt/DataA/NEW_KSPACE`).
+Open `multi_coil_LONDN/make_two_channel_dataset.py` and update the `Kspace_data_name` variable:
+
+```python
+# Inside make_two_channel_dataset.py
+Kspace_data_name = '/mnt/DataA/NEW_KSPACE'  # <--- Change this to your path
+```
+
+**Step 2: Generate Dataset**
+Run the script to create the image space data based on the k-space inputs:
+```bash
+cd multi_coil_LONDN
+python make_two_channel_dataset.py
+
+### 3. Data Preparation
 
 We provide the necessary k-space data via Dropbox. You must download this data and generate the image-space dataset before training.
 
