@@ -36,3 +36,16 @@ The core code is located under the `multi_coil_LONDN/` directory:
  ┃ ┣ 📜 train_local_unet.py                  # Main script for training and testing Local UNet models
  ┃ ┗ 📜 transfer_learning_local_network.py   # Script for transfer learning using DIDN
  ┗ 📜 requirements.txt                       # Python dependencies
+
+Related Works
+This project also references the BLIPS framework. Please consider citing:
+
+Code snippet
+
+@article{Lahiri2021Blind,
+  author  = {Anish Lahiri and Guanhua Wang and Sai Ravishankar and Jeffrey A. Fessler},
+  title   = {Blind Primed Supervised (BLIPS) Learning for MR Image Reconstruction},
+  journal = {IEEE Transactions on Medical Imaging},
+  year    = {2021},
+  doi     = {10.1109/TMI.2021.3093770}
+}
