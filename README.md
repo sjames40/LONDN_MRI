@@ -85,30 +85,20 @@ python transfer_learning_local_network.py
 
 ## 📝 Citation
 
-If you find this code useful, please cite our paper (LONDN) and the foundational BLIPS paper:
+If you find this code useful, please cite our paper:
 
-**LONDN (Current Work):**
+**LONDN:**
 ```bibtex
-@article{Liang2024Adaptive,
-  author  = {S. Liang and A. Lahiri and S. Ravishankar},
-  title   = {Adaptive Local Neighborhood-based Neural Networks for MR Image Reconstruction from Undersampled Data},
-  journal = {IEEE Transactions on Computational Imaging},
-  year    = {2024},
-  doi     = {10.1109/TCI.2024.3394770},
-  url     = {[https://ieeexplore.ieee.org/abstract/document/10510040](https://ieeexplore.ieee.org/abstract/document/10510040)}
-}
-```
-
-**BLIPS (Foundational Work):**
-```bibtex
-@article{Lahiri2021Blind,
-  author  = {Anish Lahiri and Guanhua Wang and Sai Ravishankar and Jeffrey A. Fessler},
-  title   = {Blind Primed Supervised (BLIPS) Learning for MR Image Reconstruction},
-  journal = {IEEE Transactions on Medical Imaging},
-  year    = {2021},
-  doi     = {10.1109/TMI.2021.3093770},
-  url     = {[https://arxiv.org/abs/2104.05028](https://arxiv.org/abs/2104.05028)}
-}
+@ARTICLE{10510040,
+  author={Liang, Shijun and Lahiri, Anish and Ravishankar, Saiprasad},
+  journal={IEEE Transactions on Computational Imaging}, 
+  title={Adaptive Local Neighborhood-Based Neural Networks for MR Image Reconstruction From Undersampled Data}, 
+  year={2024},
+  volume={10},
+  number={},
+  pages={1235-1249},
+  keywords={Image reconstruction;Magnetic resonance imaging;Training;Deep learning;Adaptation models;Time measurement;Optimization;Compressed sensing;deep learning;machine learning;magnetic resonance imaging;unrolling},
+  doi={10.1109/TCI.2024.3394770}}
 ```
 
 ## 📬 Correspondence
