@@ -48,7 +48,18 @@ The core implementation is located under the `multi_coil_LONDN/` directory.
 * **PyTorch > 1.7.0**
 * **[BART](https://mrirecon.github.io/bart/)**: Used for generating the initial dataset.
 
-### 2. Data Preparation
+### 2. Environment Setup
+We provide an `environment.yml` file to easily configure the Conda environment with all dependencies (including PyTorch, Visdom, Dominate, etc.).
+
+```bash
+# 1. Create the environment
+conda env create -f environment.yml
+
+# 2. Activate the environment
+conda activate londn_mri_env
+```
+
+### 3. Data Preparation
 To reproduce the results, please download the specific k-space datasets used in our experiments.
 
 1.  **Dataset**:  
