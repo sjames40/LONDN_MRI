@@ -91,6 +91,7 @@ To reproduce the results, please download the specific k-space datasets used in 
     cd multi_coil_LONDN
     python prepare_data_from_kspace.py.py
     ```
+    The results will be saved into **'/multi_coil_LONDN/generated_dataset'**.
 
 ## 🏃 Usage
 
@@ -101,10 +102,13 @@ To train the local model and test reconstruction from undersampled multi-coil k-
 python train_local_unet.py
 ```
 
-### 💾 Pre-trained Checkpoints
-We provide pre-trained model weights in the `checkpoints/` directory (e.g., `exp_0101`, `exp_0141`, etc.). These checkpoints can be used to:
+### Pre-trained Checkpoints
+We provide pre-trained model weights in the `checkpoints/` directory (e.g., `best_net_for_index101`, `last_net_for_index101`, etc.). These checkpoints can be used to:
 * **Reproduce results** reported in the paper.
 * **Fine-tune** the model on your own datasets.
+
+### Results
+The results will be saved into **'/multi_coil_LONDN/checkpoints'**.
 
 *(Note: Ensure you are in the `multi_coil_LONDN` directory when running these scripts.)*
 
