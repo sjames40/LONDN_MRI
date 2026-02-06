@@ -1,0 +1,24 @@
+name: londn-mri
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  
+  - pytorch>=1.7.0
+  - torchvision>=0.8.1
+  - pytorch-cuda=11.8  
+  
+  - dominate>=2.5.1
+  - visdom>=0.1.8
+
+  - numpy
+  - scipy       
+  - tqdm       
+  - matplotlib 
+  
+  - pip
+  - pip:
+    - h5py      
