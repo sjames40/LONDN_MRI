@@ -37,6 +37,7 @@ The core implementation is located under the `multi_coil_LONDN/` directory.
    ┃ ┣ 📂 4acceleration_mask_test2   # Fixed masks for testing (4x accel)
    ┃ ┣ 📂 four_fold_image_shape      # Processed 2-channel complex images
    ┃ ┗ 📂 test_four_fold             # Test set specific data
+   ┣ 📜 prepare_data_from_kspace.py  # Script to generate image-space dataset and masks from k-space
    ┣ 📜 local_network_dataset.py     # Data loader for noisy local neighborhood case
    ┗ 📜 train_local_unet.py          # Training/Testing script using UNet for local reconstruction
 ```
@@ -77,18 +78,18 @@ To reproduce the results, please download the specific k-space datasets used in 
     
     **Step 1: Configure Path**
     Unzip the downloaded data to your local storage (e.g., `/mnt/DataA/NEW_KSPACE`).
-    Open `multi_coil_LONDN/make_two_channel_dataset.py` and update the `Kspace_data_name` variable:
+    Open `multi_coil_LONDN/prepare_data_from_kspace.py` and update the `Kspace_data_name` variable:
     
     ```python
-    # Inside make_two_channel_dataset.py
-    Kspace_data_name = '/mnt/DataA/NEW_KSPACE'  # <--- Change this to your path
+    # Inside prepare_data_from_kspace.py.py
+    SOURCE_KSPACE_DIR = '/mnt/DataA/NEW_KSPACE'  # <--- Change this to your path
     ```
     
     **Step 2: Generate Dataset**
     Run the script to create the image space data based on the k-space inputs:
     ```bash
     cd multi_coil_LONDN
-    python make_two_channel_dataset.py
+    python prepare_data_from_kspace.py.py
     ```
 
 ## 🏃 Usage
