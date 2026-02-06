@@ -57,7 +57,7 @@ We provide an `environment.yml` file to easily configure the Conda environment w
 conda env create -f environment.yml
 
 # 2. Activate the environment
-conda activate londn_mri_env
+conda activate londn_mri
 ```
 
 ### 3. Data Preparation
