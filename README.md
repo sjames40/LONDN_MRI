@@ -56,7 +56,8 @@ To reproduce the results, please download the specific k-space datasets used in 
     * **For Stanford 2D FSE**: The **full dataset** is available on the official website. We also provide a **partial dataset** (subset) via [**Google Drive**](https://drive.google.com/drive/folders/1CEI3SH2Amw1wRlQJygeWj1r1TI4jAOjm?usp=sharing) for quick testing.
     
 Once downloaded, unzip the files and place them into the project directory (e.g., inside a folder named `data` or as specified in the notebook).
-    **Step 1: Configure Path**
+
+***Step 1: Configure Path**
 Unzip the downloaded data to your local storage (e.g., `/mnt/DataA/NEW_KSPACE`).
 Open `multi_coil_LONDN/make_two_channel_dataset.py` and update the `Kspace_data_name` variable:
 
@@ -65,7 +66,7 @@ Open `multi_coil_LONDN/make_two_channel_dataset.py` and update the `Kspace_data_
 Kspace_data_name = '/mnt/DataA/NEW_KSPACE'  # <--- Change this to your path
 ```
 
-**Step 2: Generate Dataset**
+***Step 2: Generate Dataset**
 Run the script to create the image space data based on the k-space inputs:
 ```bash
 cd multi_coil_LONDN
