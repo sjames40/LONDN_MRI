@@ -101,12 +101,10 @@ To train the local model and test reconstruction from undersampled multi-coil k-
 python train_local_unet.py
 ```
 
-### Transfer Learning (DIDN)
-To perform transfer learning and reconstruction using the DIDN architecture:
-
-```bash
-python transfer_learning_local_network.py
-```
+### 💾 Pre-trained Checkpoints
+We provide pre-trained model weights in the `checkpoints/` directory (e.g., `exp_0101`, `exp_0141`, etc.). These checkpoints can be used to:
+* **Reproduce results** reported in the paper.
+* **Fine-tune** the model on your own datasets.
 
 *(Note: Ensure you are in the `multi_coil_LONDN` directory when running these scripts.)*
 
