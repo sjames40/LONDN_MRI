@@ -43,11 +43,18 @@ The core implementation is located under the `multi_coil_LONDN/` directory.
 
 ### 2. Data Preparation
 
+    We **recommend** downloading the **fastMRI dataset** first, as it is the primary dataset used to generate the results in `self_guided_DIP_demo.ipynb`. 
+    
+    **Download Instructions:**
+    * **For fastMRI**: Please visit the official website to obtain the license/agreement and then download the data.
+    * **For Stanford 2D FSE**: The **full dataset** is available on the official website. We also provide a **partial dataset** (subset) via [**Google Drive**](https://drive.google.com/drive/folders/1CEI3SH2Amw1wRlQJygeWj1r1TI4jAOjm?usp=sharing) for quick testing.
+    
+    Once downloaded, unzip the files and place them into the project directory (e.g., inside a folder named `data` or as specified in the notebook).
+
 We provide the necessary k-space data via Dropbox. You must download this data and generate the image-space dataset before training.
 
 **Step 1: Download K-Space Data**
 Download the `NEW_KSPACE.zip` file from the link below:
-> 🔗 [**Download Data (Dropbox)**](https://www.dropbox.com/scl/fi/801dxovhbkp2bkl2krz5x/NEW_KSPACE.zip?rlkey=4u3b32f6c4pfujsv3kp7z5bdk&st=hwe9thrv&dl=0)
 
 **Step 2: Configure Path**
 Unzip the downloaded data to your local storage (e.g., `/mnt/DataA/NEW_KSPACE`).
