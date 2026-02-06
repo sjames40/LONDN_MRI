@@ -15,7 +15,7 @@ The method focuses on **Adaptive Local Neighborhood-based Neural Networks** for 
 This implementation is based on and extends the **MODL** and **BLIPS** (Blind Primed Supervised Learning) frameworks.
 
 ### Key Components
-The code is organized into three main study components:
+The code is organized into three main study components(For benchmark comparison, we refer to the original implementation of - [**MODL**](https://github.com/hkaggarwal/modl):
 1.  **Single Coil Global MODL**
 2.  **Multi-Coil Global MODL**
 3.  **Multi-Coil LONDN**
