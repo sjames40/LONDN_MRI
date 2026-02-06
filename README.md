@@ -16,22 +16,29 @@ This implementation is based on and extends the **MODL** and **BLIPS** (Blind Pr
 
 ### Key Components
 The code is organized into three main study components:
-1.  **Single Coil Study**: Two-channel processing.
-2.  **Multi-Coil Global Study**: Two-channel global model.
-3.  **Multi-Coil Local Model**: Two-channel local model (Requires PyTorch > 1.7.0).
+1.  **Single Coil Global MODL**
+2.  **Multi-Coil Global MODL**
+3.  **Multi-Coil LONDN**
 
 ## 📂 Directory Overview
 
 The core implementation is located under the `multi_coil_LONDN/` directory.
 
 ```text
-📦 multi_coil_LONDN
- ┣ 📜 make_two_channel_dataset.py        # Script to create the two-channel dataset (based on BLIPSrecon modifications)
- ┣ 📜 global_network_dataset.py          # Data loader for multi-coil MR measurements (Global Case)
- ┣ 📜 local_network_dataset.py           # Data loader for noisy local neighborhood case
- ┣ 📜 local_network_dataset_oracle.py    # Data loader for oracle local neighborhood case
- ┣ 📜 train_local_unet.py                # Training/Testing script using UNet for local reconstruction
- ┗ 📜 transfer_learning_local_network.py # Training/Testing script using DIDN for transfer learning
+📦 LONDN_MRI
+ ┣ 📂 data                           # Data directory
+ ┣ 📂 models                         # Neural network architectures
+ ┃ ┣ 📜 networks.py                  # Common network utilities
+ ┃ ┗ 📜 Unet_model_fast_mri.py       # Standard UNet for FastMRI
+ ┗ 📂 multi_coil_LONDN               # Main Local LONDN implementation
+   ┣ 📂 checkpoints                  # Saved model checkpoints (e.g., exp_0101)
+   ┣ 📂 generated_dataset            # Generated image-space datasets and masks
+   ┃ ┣ 📂 4acceleration_mask_random3 # Random masks for training (4x accel)
+   ┃ ┣ 📂 4acceleration_mask_test2   # Fixed masks for testing (4x accel)
+   ┃ ┣ 📂 four_fold_image_shape      # Processed 2-channel complex images
+   ┃ ┗ 📂 test_four_fold             # Test set specific data
+   ┣ 📜 local_network_dataset.py     # Data loader for noisy local neighborhood case
+   ┗ 📜 train_local_unet.py          # Training/Testing script using UNet for local reconstruction
 ```
 
 ## 🚀 Getting Started
@@ -55,45 +62,23 @@ To reproduce the results, please download the specific k-space datasets used in 
     * **For fastMRI**: Please visit the official website to obtain the license/agreement and then download the data.
     * **For Stanford 2D FSE**: The **full dataset** is available on the official website. We also provide a **partial dataset** (subset) via [**Google Drive**](https://drive.google.com/drive/folders/1CEI3SH2Amw1wRlQJygeWj1r1TI4jAOjm?usp=sharing) for quick testing.
     
-Once downloaded, unzip the files and place them into the project directory (e.g., inside a folder named `data` or as specified in the notebook).
-
-***Step 1: Configure Path**
-Unzip the downloaded data to your local storage (e.g., `/mnt/DataA/NEW_KSPACE`).
-Open `multi_coil_LONDN/make_two_channel_dataset.py` and update the `Kspace_data_name` variable:
-
-```python
-# Inside make_two_channel_dataset.py
-Kspace_data_name = '/mnt/DataA/NEW_KSPACE'  # <--- Change this to your path
-```
-
-***Step 2: Generate Dataset**
-Run the script to create the image space data based on the k-space inputs:
-```bash
-cd multi_coil_LONDN
-python make_two_channel_dataset.py
-
-### 3. Data Preparation
-
-We provide the necessary k-space data via Dropbox. You must download this data and generate the image-space dataset before training.
-
-**Step 1: Download K-Space Data**
-Download the `NEW_KSPACE.zip` file from the link below:
-
-**Step 2: Configure Path**
-Unzip the downloaded data to your local storage (e.g., `/mnt/DataA/NEW_KSPACE`).
-Open `multi_coil_LONDN/make_two_channel_dataset.py` and update the `Kspace_data_name` variable:
-
-```python
-# Inside make_two_channel_dataset.py
-Kspace_data_name = '/mnt/DataA/NEW_KSPACE'  # <--- Change this to your path
-```
-
-**Step 3: Generate Dataset**
-Run the script to create the image space data based on the k-space inputs:
-```bash
-cd multi_coil_LONDN
-python make_two_channel_dataset.py
-```
+    ⚠️⚠️Once downloaded, unzip the files and place them into the project directory (e.g., inside a folder named `data` or as specified in the notebook).
+    
+    **Step 1: Configure Path**
+    Unzip the downloaded data to your local storage (e.g., `/mnt/DataA/NEW_KSPACE`).
+    Open `multi_coil_LONDN/make_two_channel_dataset.py` and update the `Kspace_data_name` variable:
+    
+    ```python
+    # Inside make_two_channel_dataset.py
+    Kspace_data_name = '/mnt/DataA/NEW_KSPACE'  # <--- Change this to your path
+    ```
+    
+    **Step 2: Generate Dataset**
+    Run the script to create the image space data based on the k-space inputs:
+    ```bash
+    cd multi_coil_LONDN
+    python make_two_channel_dataset.py
+    ```
 
 ## 🏃 Usage
 
