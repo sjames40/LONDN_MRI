@@ -3,7 +3,7 @@ LONDN-MRI
 
 Code for testing and reproducing results for MRI local study project:
 
-Modl and BLIPS code according to the following paper
+MODL and BLIPS code according to the following paper
 
 Anish Lahiri, Guanhua Wang, Sai Ravishankar, Jeffrey A. Fessler, (2021). "Blind
 Primed Supervised (BLIPS) Learning for MR Image Reconstruction." IEEE
