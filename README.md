@@ -94,7 +94,7 @@ To reproduce the results, please download the specific k-space datasets used in 
 
 ## 🏃 Usage
 
-### Local Model Training -- LONDN (UNet)
+### Local Model Training -- LONDN-MRI (UNet)
 To train the local model and test reconstruction from undersampled multi-coil k-space measurements:
 
 ```bash
