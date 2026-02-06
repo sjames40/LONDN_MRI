@@ -27,10 +27,10 @@ The core implementation is located under the `multi_coil_LONDN/` directory.
 ```text
 📦 LONDN_MRI
  ┣ 📂 data                           # Data directory
- ┣ 📂 models                         # Neural network architectures
+ ┣ 📂 models-new                         # Neural network architectures
  ┃ ┣ 📜 networks.py                  # Common network utilities
  ┃ ┗ 📜 Unet_model_fast_mri.py       # Standard UNet for FastMRI
- ┗ 📂 multi_coil_LONDN               # Main Local LONDN implementation
+ ┗ 📂 multi_coil_LONDN-new               # Main Local LONDN implementation
    ┣ 📂 checkpoints                  # Saved model checkpoints (e.g., exp_0101)
    ┣ 📂 generated_dataset            # Generated image-space datasets and masks
    ┃ ┣ 📂 4acceleration_mask_random3 # Random masks for training (4x accel)
