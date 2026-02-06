@@ -87,7 +87,6 @@ python transfer_learning_local_network.py
 
 If you find this code useful, please cite our paper:
 
-**LONDN:**
 ```bibtex
 @ARTICLE{10510040,
   author={Liang, Shijun and Lahiri, Anish and Ravishankar, Saiprasad},
