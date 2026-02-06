@@ -16,9 +16,8 @@ This implementation is based on and extends the **MODL** and **BLIPS** (Blind Pr
 
 ### Key Components
 The code is organized into three main study components(For benchmark comparison, we refer to the original implementation of [**MODL**](https://github.com/hkaggarwal/modl))
-1.  **Single Coil Global MODL**
-2.  **Multi-Coil Global MODL**
-3.  **Multi-Coil LONDN**
+1.  **Multi-Coil Global MODL**
+2.  **Multi-Coil LONDN**
 
 ## 📂 Directory Overview
 
