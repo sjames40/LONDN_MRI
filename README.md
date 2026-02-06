@@ -1,44 +1,38 @@
-LONDN-MRI
-=====================================
+# LONDN-MRI: Adaptive Local Neighborhood-based Neural Networks for MR Image Reconstruction
 
-Code for testing and reproducing results for MRI local study project:
+[![IEEE Xplore](https://img.shields.io/badge/IEEE_Xplore-10.1109/TCI.2024.3394770-blue.svg)](https://ieeexplore.ieee.org/abstract/document/10510040)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-%3E1.7.0-ee4c2c.svg)](https://pytorch.org/)
 
-MODL and BLIPS code according to the following paper
+> **Official PyTorch Implementation** for the paper "Adaptive Local Neighborhood-based Neural Networks for MR Image Reconstruction from Undersampled Data" (IEEE TCI 2024).
 
-Anish Lahiri, Guanhua Wang, Sai Ravishankar, Jeffrey A. Fessler, (2021). "Blind
-Primed Supervised (BLIPS) Learning for MR Image Reconstruction." IEEE
-Transactions on Medical Imaging http://doi.org/10.1109/TMI.2021.3093770; [arXiv
-preprint arXiv:2104.05028.](https://arxiv.org/abs/2104.05028)
+## 📖 Overview
 
-The code is made up of three components: 
-1. single coil two channel study2
-2. multi coil two channel global study
-3. multi coil two channel local model (with PyTorch \> 1.7.0).
+This repository provides the code for **LONDN-MRI**, a framework for MR image reconstruction using adaptive local neighborhood-based neural networks. The method focuses on learning local dependencies to improve reconstruction quality from undersampled k-space data.
 
-Additionally, we used
-[BART](https://mrirecon.github.io/bart/) to generate the dataset.
+Our implementation builds upon the foundational work of **MODL** and **BLIPS**:
+* *Anish Lahiri, et al.* "Blind Primed Supervised (BLIPS) Learning for MR Image Reconstruction." (IEEE TMI 2021). [arXiv:2104.05028](https://arxiv.org/abs/2104.05028).
 
-MRI local learning
-------------------
-S. Liang, A. Lahiri and S. Ravishankar, "Adaptive 
-Local Neighborhood-based Neural Networks for MR Image Reconstruction from Undersampled Data," 
-in IEEE Transactions on Computational Imaging, doi: 10.1109/TCI.2024.3394770.
-https://ieeexplore.ieee.org/abstract/document/10510040
+## ✨ Features
 
-**Directory overview** (under `multi_coil_LONDN/`)
+- **Local Learning Strategy**: Implements adaptive local neighborhood-based networks for robust reconstruction.
+- **Multi-Coil Support**: capable of handling both single-coil and multi-coil MR measurements.
+- **Two-Channel Architecture**: Efficiently processes complex MRI data using a two-channel real/imaginary approach.
+- **Transfer Learning**: Includes scripts for transfer learning using DIDN architectures.
+- **BART Integration**: Uses [BART](https://mrirecon.github.io/bart/) toolbox for dataset generation and simulation.
 
-- `make_two_channel_dataset.py` specifies and shows how to make the two channel dataset
-based on the modification from https://github.com/JeffFessler/BLIPSrecon
-- `global_network_dataset.py`  specifies the data loader for MRI image loading from
-multicoil MR measurements for global case.
-- `local_network_dataset.py` and `local_network_dataset_oracle.py` specifies the data loader for MRI image loading from multicoil MR measurements for noise local case and oracle local case.
-- `train_local_unet.py`  can be used for local model training and testing
-reconstruction from undersampled mulit-coil k-space measurements using UNet
-training.
-- `transfer_learning_local_network.py`  can be used for local  model training and testing
-reconstruction from undersampled mulit-coil k-space measurements using DIDN
-training.
+## 📂 Repository Structure
 
-------------------------------------------------------------
-Data avaliable on [Dropbox](https://www.dropbox.com/scl/fi/801dxovhbkp2bkl2krz5x/NEW_KSPACE.zip?rlkey=4u3b32f6c4pfujsv3kp7z5bdk&st=hwe9thrv&dl=0).
-Just put the data on the your own dataset on the Kspace_data_name= '/mnt/DataA/NEW_KSPACE' and make the image space image based on the kspace data.
+The core code is located under the `multi_coil_LONDN/` directory:
+
+```text
+📦 LONDN-MRI
+ ┣ 📂 multi_coil_LONDN
+ ┃ ┣ 📜 make_two_channel_dataset.py          # Script to generate two-channel datasets (Modified from BLIPSrecon)
+ ┃ ┣ 📜 global_network_dataset.py            # Dataloader for global multi-coil MR measurements
+ ┃ ┣ 📜 local_network_dataset.py             # Dataloader for local noise model case
+ ┃ ┣ 📜 local_network_dataset_oracle.py      # Dataloader for local oracle model case
+ ┃ ┣ 📜 train_local_unet.py                  # Main script for training and testing Local UNet models
+ ┃ ┗ 📜 transfer_learning_local_network.py   # Script for transfer learning using DIDN
+ ┗ 📜 requirements.txt                       # Python dependencies
